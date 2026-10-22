@@ -1,0 +1,8 @@
+{
+  "filename": "original16_data.zip",
+  "sha256": "72d4b8d776db3cadc6925f1b72ec06340afe5f95f83e262391ab2263040a4ce3",
+  "bytes": 604406001,
+  "training_csv_files": 306,
+  "validation_csv_files": 102,
+  "original_source_npz_files": 408
+}

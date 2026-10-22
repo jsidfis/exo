@@ -1,0 +1,42 @@
+model_name: parallel_tcn_ssm_last
+output_dim: 4
+num_channels:
+- 64
+- 64
+- 64
+kernel_size: 7
+dropout: 0.4
+ssm_branch_layers: 1
+ssm_d_state: 8
+ssm_expand: 2
+ssm_dropout: 0.1
+ssm_scale_init: 0.1
+fusion: gated
+window: 180
+stride: 30
+batch_size: 64
+lr: 0.0001
+input_dim: 16
+head_type: linear
+include_availability: true
+pressure_dropout: 0.0
+endpoint_window: 180
+optimizer: Adam
+weight_decay: 0.0
+epochs: 100
+patience: 10
+scheduler_patience: 5
+grad_clip_norm: null
+features:
+  use_diff: true
+  use_ddiff: true
+  use_pressure: true
+  diff_method: butterworth_causal
+  dt: 0.005
+  butter_cutoff: 10.0
+  butter_order: 4
+source_validity_manifest: config/source_validity_manifest.json
+data_root: data/corrected
+split_dir: config/splits
+cache_root: data/original_sources
+metadata_csv: config/metadata.csv
